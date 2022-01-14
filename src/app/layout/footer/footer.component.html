@@ -1,7 +1,14 @@
 <footer>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-4">cool quotes here</div>
+      <div class="col-md-4" id="quote-box">
+        <h2 class="quote-display">
+          {{ retrievedQuote.text }}
+        </h2>
+        <p class="quote-display">
+          {{ retrievedQuote.author }}
+        </p>
+      </div>
       <div class="col-md-4">copyright</div>
       <div class="col-md-4">navigation</div>
     </div>
