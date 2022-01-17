@@ -8,10 +8,20 @@ import { Quotes } from '../interfaces/quotes';
 export class QuotesService {
   //.
   url = 'https://type.fit/api/quotes';
+  storedQuotes: Quotes[] = [
+    {
+      text: 'A reader lives a thousand lives before he dies...The man who never reads lives only one',
+      author: 'George RR Martin',
+    },
+  ];
 
   constructor(private http: HttpClient) {}
 
   getQuotes() {
     return this.http.get<Quotes[]>(this.url);
+  }
+
+  getStoredQuotes() {
+    return this.storedQuotes;
   }
 }

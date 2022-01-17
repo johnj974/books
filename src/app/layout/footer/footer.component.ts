@@ -10,6 +10,9 @@ import { Quotes } from 'src/app/shared/interfaces/quotes';
 })
 export class FooterComponent implements OnInit {
   //.
+
+  displayYear = new Date().getFullYear();
+
   quotesArray: Quotes[] = [];
   retrievedQuote = {
     text: 'Time stays long enough for anyone who will use it.',
