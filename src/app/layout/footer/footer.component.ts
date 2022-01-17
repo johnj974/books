@@ -18,7 +18,7 @@ export class FooterComponent implements OnInit {
   constructor(private quoteService: QuotesService) {}
 
   ngOnInit(): void {
-    this.quoteService.getQuotes().subscribe((data: Quotes[]) => {
+    this.quoteService.getQuotes().subscribe((data) => {
       this.quotesArray = data;
       console.log(this.quotesArray);
       let number = Math.floor(Math.random() * this.quotesArray.length) + 1;
