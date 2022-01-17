@@ -7,12 +7,17 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
   },
   {
+    path: 'title',
+    loadChildren: () =>
+      import('./title/title.module').then((m) => m.TitleModule),
+  },
+  {
     path: 'author',
     loadChildren: () =>
       import('./author/author.module').then((m) => m.AuthorModule),
   },
   {
-    path: 'genre',
+    path: 'category',
     loadChildren: () =>
       import('./genre/genre.module').then((m) => m.GenreModule),
   },

@@ -8,7 +8,13 @@ import { HomeAuthorComponent } from './home-author/home-author.component';
 import { HomeTitleComponent } from './home-title/home-title.component';
 
 @NgModule({
-  declarations: [HomeMainComponent, HomeGenreComponent, HomeAuthorComponent, HomeTitleComponent],
+  declarations: [
+    HomeMainComponent,
+    HomeGenreComponent,
+    HomeAuthorComponent,
+    HomeTitleComponent,
+    HomeTitleComponent,
+  ],
   imports: [CommonModule, HomeRoutingModule],
 })
 export class HomeModule {}

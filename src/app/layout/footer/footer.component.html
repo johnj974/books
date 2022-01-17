@@ -10,7 +10,36 @@
         </p>
       </div>
       <div class="col-md-4">copyright {{ displayYear }}</div>
-      <div class="col-md-4">navigation</div>
+      <div class="col-md-4">
+        <p>adjust colours to display theme colour on hover</p>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a
+              class="nav-link active"
+              aria-current="page"
+              routerLink=""
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="title" routerLinkActive="active"
+              >Title</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="author" routerLinkActive="active"
+              >Author</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="category" routerLinkActive="active"
+              >Category</a
+            >
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </footer>
