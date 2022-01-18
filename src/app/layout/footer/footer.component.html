@@ -2,16 +2,16 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-4" id="quote-box">
-        <h2 class="quote-display">
+        <h4 class="quote-display">
           {{ retrievedQuote.text }}
-        </h2>
-        <p class="quote-display">
-          {{ retrievedQuote.author }}
-        </p>
+        </h4>
+        <p class="quote-display">-{{ retrievedQuote.author }}</p>
       </div>
-      <div class="col-md-4">copyright {{ displayYear }}</div>
-      <div class="col-md-4">
-        <p>adjust colours to display theme colour on hover</p>
+      <div class="col-md-4 copyright">
+        <h3>Books Books EST.1973</h3>
+        <h4>copyright {{ displayYear }}</h4>
+      </div>
+      <div class="col-md-4 navigation">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a
@@ -40,6 +40,9 @@
           </li>
         </ul>
       </div>
+    </div>
+    <div class="row contact-info">
+      <p>Contact Info Here</p>
     </div>
   </div>
 </footer>

@@ -5,12 +5,41 @@
   font-family: "The Nautigal", cursive;
   /* font-family: "Luxurious Roman", cursive; */
 
-#quote-box {
+.col-md-4 {
+  padding: 1rem;
+}
+
+#quote-box,
+.navigation {
   background-color: black;
+  color: white;
+}
+
+p.quote-display {
+  text-align: right;
+  margin-bottom: 0;
+}
+
+.copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+a.nav-link {
+  font-size: 1.2rem;
   color: white;
 }
 
 .nav-link:hover,
 .nav-link:focus {
   color: red;
+}
+
+.contact-info {
+  padding: 3rem 0;
+  text-align: center;
 }
