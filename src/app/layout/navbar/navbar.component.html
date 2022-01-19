@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-{{ navbarColour }}">
   <div class="container-fluid">
     <!-- <a class="navbar-brand" href="#">Books</a> -->
     <button
@@ -16,6 +16,7 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a
+            id="home-link"
             class="nav-link active"
             aria-current="page"
             routerLink=""
@@ -25,17 +26,29 @@
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="title" routerLinkActive="active"
+          <a
+            id="title-link"
+            class="nav-link"
+            routerLink="title"
+            routerLinkActive="active"
             >Title</a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="author" routerLinkActive="active"
+          <a
+            id="author-link"
+            class="nav-link"
+            routerLink="author"
+            routerLinkActive="active"
             >Author</a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="category" routerLinkActive="active"
+          <a
+            id="category-link"
+            class="nav-link"
+            routerLink="category"
+            routerLinkActive="active"
             >Category</a
           >
         </li>

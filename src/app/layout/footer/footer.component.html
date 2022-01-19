@@ -2,10 +2,12 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-4" id="quote-box">
-        <h4 class="quote-display">
-          {{ retrievedQuote.text }}
-        </h4>
-        <p class="quote-display">-{{ retrievedQuote.author }}</p>
+        <div>
+          <h4 class="quote-display">
+            {{ retrievedQuote.text }}
+          </h4>
+          <p class="quote-display">-{{ retrievedQuote.author }}</p>
+        </div>
       </div>
       <div class="col-md-4 copyright">
         <h3>Books Books EST.1973</h3>
@@ -15,6 +17,7 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a
+              id="home-link"
               class="nav-link active"
               aria-current="page"
               routerLink=""
@@ -24,17 +27,29 @@
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="title" routerLinkActive="active"
+            <a
+              id="title-link"
+              class="nav-link"
+              routerLink="title"
+              routerLinkActive="active"
               >Title</a
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="author" routerLinkActive="active"
+            <a
+              id="author-link"
+              class="nav-link"
+              routerLink="author"
+              routerLinkActive="active"
               >Author</a
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="category" routerLinkActive="active"
+            <a
+              id="category-link"
+              class="nav-link"
+              routerLink="category"
+              routerLinkActive="active"
               >Category</a
             >
           </li>

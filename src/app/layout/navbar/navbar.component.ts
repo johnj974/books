@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 import { QuotesService } from 'src/app/shared/services/quotes.service';
 
 @Component({
@@ -8,9 +9,14 @@ import { QuotesService } from 'src/app/shared/services/quotes.service';
 })
 export class NavbarComponent implements OnInit {
   //.
+  navbarColour = 'light';
   dateObj = new Date();
 
-  constructor() {}
+  constructor(private route: ActivatedRoute) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.route.params.subscribe((params: Params) => {
+      console.log(params);
+    });
+  }
 }

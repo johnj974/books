@@ -1,3 +1,35 @@
 nav {
   padding: 2rem 0;
 }
+
+a {
+  font-size: 1.2rem;
+}
+
+/* a {
+  font-size: 1.2rem;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 0;
+}
+
+#title-link:hover,
+#title-link.active {
+  color: green;
+}
+
+#title-link:hover {
+  border-bottom: 1px solid green;
+}
+
+#author-link:hover,
+#author-link.active {
+  color: blue;
+}
+
+#author-link:hover {
+  border-bottom: 1px solid blue;
+} */
+
+/* .navbar-light .navbar-nav .nav-link:hover {
+  color: red;
+} */

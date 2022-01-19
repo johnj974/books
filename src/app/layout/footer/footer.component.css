@@ -1,18 +1,14 @@
-/* @import url("https://fonts.googleapis.com/css2?family=The+Nautigal:wght@400;700&display=swap");
-/* @import url("https://fonts.googleapis.com/css2?family=Luxurious+Roman&display=swap"); */
-
-/*.quote-display {
-  font-family: "The Nautigal", cursive;
-  /* font-family: "Luxurious Roman", cursive; */
-
 .col-md-4 {
   padding: 1rem;
 }
 
 #quote-box,
 .navigation {
-  background-color: black;
-  color: white;
+  background-color: hsl(0, 0%, 8%);
+  color: hsl(0, 0%, 100%);
+  /*  used to center received quote 
+  display: flex;
+  align-items: center; */
 }
 
 p.quote-display {
@@ -25,18 +21,29 @@ p.quote-display {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
+  border-top: 2px solid hsl(0, 0%, 8%);
+  border-bottom: 2px solid hsl(0, 0%, 8%);
 }
 
 a.nav-link {
   font-size: 1.2rem;
-  color: white;
+  color: hsl(0, 0%, 100%);
+}
+#home-link:hover {
+  color: #fd7e14;
 }
 
-.nav-link:hover,
-.nav-link:focus {
-  color: red;
+#title-link:hover {
+  color: #198754;
+}
+
+#category-link:hover {
+  color: #0dcaf0;
+}
+
+#author-link:hover {
+  color: #0d6efd;
+  /* border-bottom: 1px solid #0d6efd; */
 }
 
 .contact-info {
