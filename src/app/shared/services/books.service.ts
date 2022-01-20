@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { KeysService } from './keys.service';
 
 @Injectable({
   providedIn: 'root',
@@ -7,19 +8,23 @@ import { Injectable } from '@angular/core';
 export class BooksService {
   //.
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private keysService: KeysService) {}
 
-  getBooks() {
+  getByAuthor(author) {
     return this.http.get(
-      'https://www.googleapis.com/books/v1/volumes?q=flowers+inauthor:keyes&key=AIzaSyBYgbaJSLfKqfWzgkRJ9nPoJGGTB7vUICk&maxResults=10'
+      `https://www.googleapis.com/books/v1/volumes?q=inauthor:${author}&key=${this.keysService.getKey()}&maxResults=10`
+    );
+  }
+
+  getByTitle(title) {
+    return this.http.get(
+      `https://www.googleapis.com/books/v1/volumes?q=intitle:${title}&key=${this.keysService.getKey()}&maxResults=10`
+    );
+  }
+
+  getByCategory(category) {
+    return this.http.get(
+      `https://www.googleapis.com/books/v1/volumes?q=subject:${category}&key=${this.keysService.getKey()}&maxResults=10`
     );
   }
 }
-// api
-// AIzaSyBYgbaJSLfKqfWzgkRJ9nPoJGGTB7vUICk
-
-// search url
-// https://www.googleapis.com/books/v1/volumes?q=search+terms
-
-// example url+search parameters+key
-// https://www.googleapis.com/books/v1/volumes?q=flowers+inauthor:keyes&key=AIzaSyBYgbaJSLfKqfWzgkRJ9nPoJGGTB7vUICk
