@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { GenreRoutingModule } from './genre-routing.module';
 import { GenreMainComponent } from './genre-main/genre-main.component';
+import { GenreSearchComponent } from './genre-search/genre-search.component';
 
 
 @NgModule({
   declarations: [
-    GenreMainComponent
+    GenreMainComponent,
+    GenreSearchComponent
   ],
   imports: [
     CommonModule,

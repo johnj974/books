@@ -23,12 +23,12 @@ export class FooterComponent implements OnInit {
   ngOnInit(): void {
     this.quoteService.getQuotes().subscribe((data) => {
       this.quotesArray = data;
-      console.log(this.quotesArray);
+      //console.log(this.quotesArray);
       let number = Math.floor(Math.random() * this.quotesArray.length) + 1;
       this.retrievedQuote.text = this.quotesArray[number].text;
       this.authorCheck(this.quotesArray[number].author);
 
-      console.log(this.retrievedQuote);
+      //console.log(this.retrievedQuote);
     });
   }
 

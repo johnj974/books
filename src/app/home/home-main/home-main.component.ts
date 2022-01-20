@@ -21,6 +21,6 @@ export class HomeMainComponent implements OnInit {
       console.log(data);
     });
     this.receivedQuotes = this.quotesService.getStoredQuotes();
-    console.log(this.receivedQuotes);
+    //console.log(this.receivedQuotes);
   }
 }

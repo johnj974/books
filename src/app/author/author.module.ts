@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { AuthorRoutingModule } from './author-routing.module';
 import { AuthorMainComponent } from './author-main/author-main.component';
+import { AuthorSearchComponent } from './author-search/author-search.component';
 
 
 @NgModule({
   declarations: [
-    AuthorMainComponent
+    AuthorMainComponent,
+    AuthorSearchComponent
   ],
   imports: [
     CommonModule,
