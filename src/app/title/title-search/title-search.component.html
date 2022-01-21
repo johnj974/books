@@ -1,10 +1,18 @@
-<section>
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <p>title-search works!</p>
-        <button (click)="getTitle()">title-text</button>
-      </div>
+<div>
+  <form
+    [formGroup]="searchTitleForm"
+    (ngSubmit)="getTitle(searchTitleForm.value.title)"
+    autocomplete="off"
+  >
+    <div class="mb-3">
+      <input
+        type="text"
+        class="form-control"
+        id="title-search"
+        aria-describedby="emailHelp"
+        formControlName="title"
+      />
     </div>
-  </div>
-</section>
+    <button class="btn btn-orange">Search</button>
+  </form>
+</div>

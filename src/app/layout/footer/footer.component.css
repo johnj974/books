@@ -30,19 +30,19 @@ a.nav-link {
   color: hsl(0, 0%, 100%);
 }
 #home-link:hover {
-  color: #fd7e14;
+  color: hsl(27, 98%, 54%);
 }
 
 #title-link:hover {
-  color: #198754;
+  color: hsl(152, 69%, 31%);
 }
 
 #category-link:hover {
-  color: #0dcaf0;
+  color: hsl(190, 90%, 50%);
 }
 
 #author-link:hover {
-  color: #0d6efd;
+  color: hsl(216, 98%, 52%);
   /* border-bottom: 1px solid #0d6efd; */
 }
 
