@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { BooksService } from 'src/app/shared/services/books.service';
 
@@ -9,12 +10,21 @@ import { BooksService } from 'src/app/shared/services/books.service';
 })
 export class AuthorSearchComponent implements OnInit {
   //.
-  getAuthor() {
-    this.booksService.getByAuthor('tolkien').subscribe((data) => {
+
+  searchAuthorForm: FormGroup;
+
+  getAuthor(author: string) {
+    this.booksService.getByAuthor(author).subscribe((data) => {
       console.log(data);
+      this.searchAuthorForm.reset();
+      console.log(author);
     });
   }
   constructor(private booksService: BooksService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.searchAuthorForm = new FormGroup({
+      author: new FormControl(null, Validators.required),
+    });
+  }
 }

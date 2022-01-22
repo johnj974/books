@@ -1,10 +1,18 @@
-<section>
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <p>genre-search works!</p>
-        <button (click)="getCategory()">category text</button>
-      </div>
+<div>
+  <form
+    [formGroup]="searchCategoryForm"
+    (ngSubmit)="getCategory(searchCategoryForm.value.category)"
+    autocomplete="off"
+  >
+    <div class="mb-3">
+      <input
+        type="text"
+        class="form-control"
+        id="category-search"
+        aria-describedby="emailHelp"
+        formControlName="category"
+      />
     </div>
-  </div>
-</section>
+    <button class="btn btn-orange">Search</button>
+  </form>
+</div>

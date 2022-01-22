@@ -16,3 +16,8 @@
 .category-style {
   background-color: #0dcaf0;
 }
+
+.btn-orange {
+  background-color: hsl(27, 98%, 54%);
+  font-weight: 700;
+}

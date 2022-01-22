@@ -14,10 +14,11 @@ export class TitleSearchComponent implements OnInit {
 
   constructor(private booksService: BooksService) {}
 
-  getTitle(title) {
+  getTitle(title: string) {
     this.booksService.getByTitle(title).subscribe((data) => {
       console.log(data);
       console.log(this.searchTitleForm.value.title);
+      this.searchTitleForm.reset();
     });
   }
 
