@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { BooksService } from 'src/app/shared/services/books.service';
 
+import { map } from 'rxjs/operators';
+
 @Component({
   selector: 'app-title-search',
   templateUrl: './title-search.component.html',
@@ -24,11 +26,26 @@ export class TitleSearchComponent implements OnInit {
     if (title === null) {
       return;
     } else {
-      this.booksService.getByTitle(title).subscribe((data) => {
-        console.log(data);
-        console.log(this.searchTitleForm.value.title);
-        this.searchTitleForm.reset();
-      });
+      this.booksService
+        .getByTitle(title)
+        .pipe(
+          map((responseData) => {
+            let itemsArray;
+            for (const key in responseData) {
+              if (responseData.hasOwnProperty(key)) {
+                if (key === 'items') {
+                  itemsArray = responseData[key];
+                }
+              }
+            }
+            return itemsArray;
+          })
+        )
+        .subscribe((data) => {
+          console.log(data);
+          console.log(this.searchTitleForm.value.title);
+          this.searchTitleForm.reset();
+        });
     }
   }
 }

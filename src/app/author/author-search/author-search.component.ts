@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { map } from 'rxjs/operators';
 
 import { BooksService } from 'src/app/shared/services/books.service';
 
@@ -25,11 +26,26 @@ export class AuthorSearchComponent implements OnInit {
     if (author === null) {
       return;
     } else {
-      this.booksService.getByAuthor(author).subscribe((data) => {
-        console.log(data);
-        this.searchAuthorForm.reset();
-        console.log(author);
-      });
+      this.booksService
+        .getByAuthor(author)
+        .pipe(
+          map((responseData) => {
+            let authorArray;
+            for (const key in responseData) {
+              if (responseData.hasOwnProperty(key)) {
+                if (key === 'items') {
+                  authorArray = responseData[key];
+                }
+              }
+            }
+            return authorArray;
+          })
+        )
+        .subscribe((data) => {
+          console.log(data);
+          this.searchAuthorForm.reset();
+          console.log(author);
+        });
     }
   }
 }
