@@ -10,18 +10,24 @@ import { BooksService } from 'src/app/shared/services/books.service';
 export class GenreSearchComponent implements OnInit {
   //.
   searchCategoryForm: FormGroup;
+
   constructor(private booksService: BooksService) {}
 
-  getCategory(category: string) {
-    this.booksService.getByCategory(category).subscribe((data) => {
-      console.log(data);
-      this.searchCategoryForm.reset();
-      console.log(category);
-    });
-  }
   ngOnInit(): void {
     this.searchCategoryForm = new FormGroup({
       category: new FormControl(null, Validators.required),
     });
+  }
+
+  getCategory(category: string) {
+    if (category === null) {
+      return;
+    } else {
+      this.booksService.getByCategory(category).subscribe((data) => {
+        console.log(data);
+        this.searchCategoryForm.reset();
+        console.log(category);
+      });
+    }
   }
 }

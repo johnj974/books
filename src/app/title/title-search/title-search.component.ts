@@ -14,17 +14,21 @@ export class TitleSearchComponent implements OnInit {
 
   constructor(private booksService: BooksService) {}
 
-  getTitle(title: string) {
-    this.booksService.getByTitle(title).subscribe((data) => {
-      console.log(data);
-      console.log(this.searchTitleForm.value.title);
-      this.searchTitleForm.reset();
-    });
-  }
-
   ngOnInit(): void {
     this.searchTitleForm = new FormGroup({
       title: new FormControl(null, Validators.required),
     });
+  }
+
+  getTitle(title: string) {
+    if (title === null) {
+      return;
+    } else {
+      this.booksService.getByTitle(title).subscribe((data) => {
+        console.log(data);
+        console.log(this.searchTitleForm.value.title);
+        this.searchTitleForm.reset();
+      });
+    }
   }
 }

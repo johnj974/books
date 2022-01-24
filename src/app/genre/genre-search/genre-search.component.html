@@ -12,6 +12,13 @@
         aria-describedby="emailHelp"
         formControlName="category"
       />
+      <span
+        *ngIf="
+          searchCategoryForm.get('category').touched &&
+          !searchCategoryForm.get('category').valid
+        "
+        >Please enter a valid Category</span
+      >
     </div>
     <button class="btn btn-orange">Search</button>
   </form>

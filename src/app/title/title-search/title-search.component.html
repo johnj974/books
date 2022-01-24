@@ -12,6 +12,13 @@
         aria-describedby="emailHelp"
         formControlName="title"
       />
+      <span
+        *ngIf="
+          !searchTitleForm.get('title').valid &&
+          searchTitleForm.get('title').touched
+        "
+        >Please enter a valid search title</span
+      >
     </div>
     <button class="btn btn-orange">Search</button>
   </form>

@@ -12,6 +12,13 @@
         aria-describedby="emailHelp"
         formControlName="author"
       />
+      <span
+        *ngIf="
+          !searchAuthorForm.get('author').valid &&
+          searchAuthorForm.get('author').touched
+        "
+        >Please enter a valid Author search</span
+      >
     </div>
     <button class="btn btn-orange">Search</button>
   </form>

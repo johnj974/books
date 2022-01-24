@@ -13,18 +13,23 @@ export class AuthorSearchComponent implements OnInit {
 
   searchAuthorForm: FormGroup;
 
-  getAuthor(author: string) {
-    this.booksService.getByAuthor(author).subscribe((data) => {
-      console.log(data);
-      this.searchAuthorForm.reset();
-      console.log(author);
-    });
-  }
   constructor(private booksService: BooksService) {}
 
   ngOnInit(): void {
     this.searchAuthorForm = new FormGroup({
       author: new FormControl(null, Validators.required),
     });
+  }
+
+  getAuthor(author: string) {
+    if (author === null) {
+      return;
+    } else {
+      this.booksService.getByAuthor(author).subscribe((data) => {
+        console.log(data);
+        this.searchAuthorForm.reset();
+        console.log(author);
+      });
+    }
   }
 }
