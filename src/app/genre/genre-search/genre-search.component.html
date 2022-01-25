@@ -1,25 +1,38 @@
-<div>
-  <form
-    [formGroup]="searchCategoryForm"
-    (ngSubmit)="getCategory(searchCategoryForm.value.category)"
-    autocomplete="off"
-  >
-    <div class="mb-3">
-      <input
-        type="text"
-        class="form-control"
-        id="category-search"
-        aria-describedby="emailHelp"
-        formControlName="category"
-      />
-      <span
-        *ngIf="
-          searchCategoryForm.get('category').touched &&
-          !searchCategoryForm.get('category').valid
-        "
-        >Please enter a valid Category</span
-      >
+<section class="category-style">
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-lg-12">
+        <div>
+          <h2>Search by Category</h2>
+        </div>
+        <div>
+          <div>
+            <form
+              [formGroup]="searchCategoryForm"
+              (ngSubmit)="getCategory(searchCategoryForm.value.category)"
+              autocomplete="off"
+            >
+              <div class="mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="category-search"
+                  aria-describedby="emailHelp"
+                  formControlName="category"
+                />
+                <span
+                  *ngIf="
+                    searchCategoryForm.get('category').touched &&
+                    !searchCategoryForm.get('category').valid
+                  "
+                  >Please enter a valid Category</span
+                >
+              </div>
+              <button class="btn btn-orange">Search</button>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
-    <button class="btn btn-orange">Search</button>
-  </form>
-</div>
+  </div>
+</section>

@@ -4,8 +4,8 @@
 
 #quote-box,
 .navigation {
-  background-color: hsl(0, 0%, 8%);
-  color: hsl(0, 0%, 100%);
+  background-color: var(--footer-bg-color);
+  color: var(--footer-font-color);
   /*  used to center received quote 
   display: flex;
   align-items: center; */
@@ -21,28 +21,28 @@ p.quote-display {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border-top: 2px solid hsl(0, 0%, 8%);
-  border-bottom: 2px solid hsl(0, 0%, 8%);
+  border-top: 2px solid var(--footer-bg-color);
+  border-bottom: 2px solid var(--footer-bg-color);
 }
 
 a.nav-link {
   font-size: 1.2rem;
-  color: hsl(0, 0%, 100%);
+  color: var(--footer-font-color);
 }
 #home-link:hover {
-  color: hsl(27, 98%, 54%);
+  color: var(--orange-color);
 }
 
 #title-link:hover {
-  color: hsl(152, 69%, 31%);
+  color: var(--title-color);
 }
 
 #category-link:hover {
-  color: hsl(190, 90%, 50%);
+  color: var(--category-color);
 }
 
 #author-link:hover {
-  color: hsl(216, 98%, 52%);
+  color: var(--author-color);
   /* border-bottom: 1px solid #0d6efd; */
 }
 

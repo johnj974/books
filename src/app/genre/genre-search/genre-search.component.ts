@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { map } from 'rxjs/operators';
 import { BooksService } from 'src/app/shared/services/books.service';
 
 @Component({
@@ -24,26 +23,11 @@ export class GenreSearchComponent implements OnInit {
     if (category === null) {
       return;
     } else {
-      this.booksService
-        .getByCategory(category)
-        .pipe(
-          map((responseData) => {
-            let categoryArray;
-            for (const key in responseData) {
-              if (responseData.hasOwnProperty(key)) {
-                if (key === 'items') {
-                  categoryArray = responseData[key];
-                }
-              }
-            }
-            return categoryArray;
-          })
-        )
-        .subscribe((data) => {
-          console.log(data);
-          this.searchCategoryForm.reset();
-          console.log(category);
-        });
+      this.booksService.getByCategory(category).subscribe((data) => {
+        console.log(data);
+        this.searchCategoryForm.reset();
+        console.log(category);
+      });
     }
   }
 }

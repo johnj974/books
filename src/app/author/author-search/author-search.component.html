@@ -1,25 +1,36 @@
-<div>
-  <form
-    [formGroup]="searchAuthorForm"
-    (ngSubmit)="getAuthor(searchAuthorForm.value.author)"
-    autocomplete="off"
-  >
-    <div class="mb-3">
-      <input
-        type="text"
-        class="form-control"
-        id="author-search"
-        aria-describedby="emailHelp"
-        formControlName="author"
-      />
-      <span
-        *ngIf="
-          !searchAuthorForm.get('author').valid &&
-          searchAuthorForm.get('author').touched
-        "
-        >Please enter a valid Author search</span
-      >
+<section class="authors-style">
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-lg-12">
+        <div>
+          <h2>Search by Author</h2>
+        </div>
+        <div>
+          <form
+            [formGroup]="searchAuthorForm"
+            (ngSubmit)="getAuthor(searchAuthorForm.value.author)"
+            autocomplete="off"
+          >
+            <div class="mb-3">
+              <input
+                type="text"
+                class="form-control"
+                id="author-search"
+                aria-describedby="emailHelp"
+                formControlName="author"
+              />
+              <span
+                *ngIf="
+                  !searchAuthorForm.get('author').valid &&
+                  searchAuthorForm.get('author').touched
+                "
+                >Please enter a valid Author search</span
+              >
+            </div>
+            <button class="btn btn-orange">Search</button>
+          </form>
+        </div>
+      </div>
     </div>
-    <button class="btn btn-orange">Search</button>
-  </form>
-</div>
+  </div>
+</section>

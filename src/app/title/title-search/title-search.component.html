@@ -1,25 +1,36 @@
-<div>
-  <form
-    [formGroup]="searchTitleForm"
-    (ngSubmit)="getTitle(searchTitleForm.value.title)"
-    autocomplete="off"
-  >
-    <div class="mb-3">
-      <input
-        type="text"
-        class="form-control"
-        id="title-search"
-        aria-describedby="emailHelp"
-        formControlName="title"
-      />
-      <span
-        *ngIf="
-          !searchTitleForm.get('title').valid &&
-          searchTitleForm.get('title').touched
-        "
-        >Please enter a valid search title</span
-      >
+<section class="title-style">
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-lg-12">
+        <div>
+          <h2>Search by Title</h2>
+        </div>
+        <div>
+          <form
+            [formGroup]="searchTitleForm"
+            (ngSubmit)="getTitle(searchTitleForm.value.title)"
+            autocomplete="off"
+          >
+            <div class="mb-3">
+              <input
+                type="text"
+                class="form-control"
+                id="title-search"
+                aria-describedby="emailHelp"
+                formControlName="title"
+              />
+              <span
+                *ngIf="
+                  !searchTitleForm.get('title').valid &&
+                  searchTitleForm.get('title').touched
+                "
+                >Please enter a valid search title</span
+              >
+            </div>
+            <button class="btn btn-orange">Search</button>
+          </form>
+        </div>
+      </div>
     </div>
-    <button class="btn btn-orange">Search</button>
-  </form>
-</div>
+  </div>
+</section>

@@ -6,30 +6,23 @@ a {
   font-size: 1.2rem;
 }
 
-/* a {
+a {
   font-size: 1.2rem;
-  border-bottom: 1px solid transparent;
+  border-bottom: 2px solid transparent;
   padding-bottom: 0;
 }
 
 #title-link:hover,
 #title-link.active {
-  color: green;
-}
-
-#title-link:hover {
-  border-bottom: 1px solid green;
+  border-bottom: 2px solid var(--title-color);
 }
 
 #author-link:hover,
 #author-link.active {
-  color: blue;
+  border-bottom: 2px solid var(--author-color);
 }
 
-#author-link:hover {
-  border-bottom: 1px solid blue;
-} */
-
-/* .navbar-light .navbar-nav .nav-link:hover {
-  color: red;
-} */
+#category-link:hover,
+#category-link.active {
+  border-bottom: 2px solid var(--category-color);
+}
