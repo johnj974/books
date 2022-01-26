@@ -11,6 +11,7 @@ export class TitleSearchComponent implements OnInit {
   //.
 
   searchTitleForm: FormGroup;
+  titleArray = [];
 
   constructor(private booksService: BooksService) {}
 
@@ -25,10 +26,10 @@ export class TitleSearchComponent implements OnInit {
       return;
     } else {
       this.booksService.getByTitle(title).subscribe((data) => {
-        console.log(data);
         for (const item of data) {
-          console.log(item.volumeInfo.title);
+          this.titleArray.push(item);
         }
+        console.log(this.titleArray);
         console.log(this.searchTitleForm.value.title);
         this.searchTitleForm.reset();
       });

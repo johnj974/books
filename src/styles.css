@@ -31,9 +31,13 @@ body {
   background-color: var(--category-color);
 }
 
+.btn {
+  font-weight: 500;
+  letter-spacing: 0.2em;
+}
+
 .btn-orange {
   background-color: var(--orange-color);
-  font-weight: 700;
 }
 /* FORM VALIDATION */
 input.ng-invalid.ng-touched {
