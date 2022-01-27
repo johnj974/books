@@ -36,9 +36,12 @@
 </section>
 <section class="title-style">
   <div class="container py-5">
-    <div class="row">
-      <div class="col-lg-3" *ngFor="let title of titleArray">
-        <div class="card" style="width: 18rem">
+    <div class="row g-4">
+      <div
+        class="col-xl-3 col-lg-4 col-md-6 col-sm-12 card-group"
+        *ngFor="let title of titleArray"
+      >
+        <div class="card titleSearch-card" style="width: 18rem">
           <img
             src="{{ title.volumeInfo.imageLinks.thumbnail }}"
             class="card-img-top"
@@ -47,17 +50,23 @@
           <div class="card-body">
             <h5 class="card-title">{{ title.volumeInfo.title }}</h5>
             <p class="card-text">
-              {{ title.volumeInfo.description }}
+              {{ title.volumeInfo.categories[0] }}
+              -{{ title.volumeInfo.averageRating }}
             </p>
           </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">{{ title.volumeInfo.authors[0] }}</li>
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
+            <!-- <li class="list-group-item">A second item</li>
+            <li class="list-group-item">A third item</li> -->
           </ul>
           <div class="card-body">
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
+            <a
+              href="{{ title.volumeInfo.previewLink }}"
+              target="_blank"
+              class="card-link"
+              >See More</a
+            >
+            <!-- <a href="#" class="card-link">Another link</a> -->
           </div>
         </div>
       </div>

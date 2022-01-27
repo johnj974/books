@@ -14,7 +14,7 @@ export class BooksService {
   getByAuthor(author) {
     return this.http
       .get(
-        `https://www.googleapis.com/books/v1/volumes?q=inauthor:${author}&key=${this.keysService.getKey()}&maxResults=10`
+        `https://www.googleapis.com/books/v1/volumes?q=inauthor:${author}&key=${this.keysService.getKey()}&maxResults=4`
       )
       .pipe(
         map((responseData) => {

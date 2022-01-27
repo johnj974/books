@@ -43,3 +43,12 @@ body {
 input.ng-invalid.ng-touched {
   border: 2px solid var(--error-color);
 }
+
+/* Title Search */
+.titleSearch-card {
+  max-width: 16em;
+}
+.card-img-top {
+  height: 15em;
+  object-fit: contain;
+}
