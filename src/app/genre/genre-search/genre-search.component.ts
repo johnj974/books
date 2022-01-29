@@ -9,6 +9,7 @@ import { BooksService } from 'src/app/shared/services/books.service';
 })
 export class GenreSearchComponent implements OnInit {
   //.
+  categorySearchArray = [];
   searchCategoryForm: FormGroup;
 
   constructor(private booksService: BooksService) {}
@@ -25,6 +26,7 @@ export class GenreSearchComponent implements OnInit {
     } else {
       this.booksService.getByCategory(category).subscribe((data) => {
         console.log(data);
+        this.categorySearchArray = data;
         this.searchCategoryForm.reset();
         console.log(category);
       });

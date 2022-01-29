@@ -45,10 +45,15 @@ input.ng-invalid.ng-touched {
 }
 
 /* Title Search */
-.titleSearch-card {
+.card-group {
+  justify-content: center;
+}
+
+.card {
   max-width: 16em;
 }
 .card-img-top {
   height: 15em;
   object-fit: contain;
+  padding: 0.2em 0;
 }

@@ -10,7 +10,7 @@ import { BooksService } from 'src/app/shared/services/books.service';
 })
 export class AuthorSearchComponent implements OnInit {
   //.
-
+  authorSearchArray = [];
   searchAuthorForm: FormGroup;
 
   constructor(private booksService: BooksService) {}
@@ -27,8 +27,9 @@ export class AuthorSearchComponent implements OnInit {
     } else {
       this.booksService.getByAuthor(author).subscribe((data) => {
         console.log(data);
+        this.authorSearchArray = data;
         this.searchAuthorForm.reset();
-        console.log(author);
+        console.log(this.authorSearchArray);
       });
     }
   }
