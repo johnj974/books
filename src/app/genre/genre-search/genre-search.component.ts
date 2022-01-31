@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BooksService } from 'src/app/shared/services/books.service';
 
 @Component({
@@ -12,7 +13,11 @@ export class GenreSearchComponent implements OnInit {
   categorySearchArray = [];
   searchCategoryForm: FormGroup;
 
-  constructor(private booksService: BooksService) {}
+  constructor(
+    private booksService: BooksService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.searchCategoryForm = new FormGroup({
@@ -31,5 +36,11 @@ export class GenreSearchComponent implements OnInit {
         console.log(category);
       });
     }
+  }
+
+  toGenreInfo(genre: string, id: number) {
+    const genreId = id;
+    const bookgenre = genre.replace(/ /g, '');
+    this.router.navigate([bookgenre, genreId], { relativeTo: this.route });
   }
 }

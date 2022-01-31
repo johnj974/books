@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BooksService } from 'src/app/shared/services/books.service';
 
 @Component({
@@ -13,7 +14,11 @@ export class TitleSearchComponent implements OnInit {
   searchTitleForm: FormGroup;
   titleArray = [];
 
-  constructor(private booksService: BooksService) {}
+  constructor(
+    private booksService: BooksService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     this.searchTitleForm = new FormGroup({
@@ -34,5 +39,11 @@ export class TitleSearchComponent implements OnInit {
         this.searchTitleForm.reset();
       });
     }
+  }
+
+  toBookInfo(book: string, id: number) {
+    const bookId = id;
+    const bookTitle = book.replace(/ /g, '');
+    this.router.navigate([bookTitle, bookId], { relativeTo: this.route });
   }
 }

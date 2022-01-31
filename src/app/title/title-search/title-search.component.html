@@ -56,17 +56,14 @@
           </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">{{ title.volumeInfo.authors[0] }}</li>
-            <!-- <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li> -->
           </ul>
           <div class="card-body">
-            <a
-              href="{{ title.volumeInfo.previewLink }}"
-              target="_blank"
-              class="card-link"
-              >See More</a
+            <button
+              class="btn-primary"
+              (click)="toBookInfo(title.volumeInfo.title, title.id)"
             >
-            <!-- <a href="#" class="card-link">Another link</a> -->
+              press me
+            </button>
           </div>
         </div>
       </div>

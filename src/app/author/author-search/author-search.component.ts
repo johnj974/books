@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { BooksService } from 'src/app/shared/services/books.service';
 
@@ -13,7 +14,11 @@ export class AuthorSearchComponent implements OnInit {
   authorSearchArray = [];
   searchAuthorForm: FormGroup;
 
-  constructor(private booksService: BooksService) {}
+  constructor(
+    private booksService: BooksService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     this.searchAuthorForm = new FormGroup({
@@ -32,5 +37,10 @@ export class AuthorSearchComponent implements OnInit {
         console.log(this.authorSearchArray);
       });
     }
+  }
+
+  toAuthorsInfo(author: string, id: string) {
+    const authorBook = author.replace(/ /g, '');
+    this.router.navigate([authorBook, id], { relativeTo: this.route });
   }
 }

@@ -63,12 +63,18 @@
             </li>
           </ul>
           <div class="card-body">
-            <a
+            <button
+              class="btn-primary"
+              (click)="toGenreInfo(category.volumeInfo.title, category.id)"
+            >
+              preesss me
+            </button>
+            <!-- <a
               href="{{ category.volumeInfo.previewLink }}"
               target="_blank"
               class="card-link"
               >See More</a
-            >
+            > -->
           </div>
         </div>
       </div>
