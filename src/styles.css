@@ -18,6 +18,13 @@ body {
   --footer-bg-color: hsl(0, 0%, 8%);
   --footer-font-color: hsl(0, 0%, 100%);
 }
+img {
+  height: 250px;
+}
+
+.img-box {
+  text-align: center;
+}
 
 .authors-style {
   background-color: var(--author-color);
