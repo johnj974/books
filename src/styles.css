@@ -18,6 +18,21 @@ body {
   --footer-bg-color: hsl(0, 0%, 8%);
   --footer-font-color: hsl(0, 0%, 100%);
 }
+
+.home-shadow {
+  background: #fff;
+}
+
+.author-shadow {
+  background: linear-gradient(var(--author-color), #fff);
+}
+.title-shadow {
+  background: linear-gradient(var(--title-color), #fff);
+}
+.category-shadow {
+  background: linear-gradient(var(--category-color), #fff);
+}
+
 img {
   height: 250px;
 }
@@ -27,15 +42,15 @@ img {
 }
 
 .authors-style {
-  background-color: var(--author-color);
+  background: linear-gradient(#ffffff, var(--author-color));
 }
 
 .title-style {
-  background-color: var(--title-color);
+  background: linear-gradient(#ffffff, var(--title-color));
 }
 
 .category-style {
-  background-color: var(--category-color);
+  background: linear-gradient(#ffffff, var(--category-color));
 }
 
 .btn {

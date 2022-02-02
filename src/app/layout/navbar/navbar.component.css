@@ -1,6 +1,6 @@
 nav {
   padding: 2rem 0;
-  border-bottom: 2px solid var(--footer-bg-color);
+  /* background: linear-gradient(var(--author-color), #ffffff); */
 }
 
 a {

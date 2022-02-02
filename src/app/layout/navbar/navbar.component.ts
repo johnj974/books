@@ -10,13 +10,14 @@ import { QuotesService } from 'src/app/shared/services/quotes.service';
 export class NavbarComponent implements OnInit {
   //.
   navbarColour = 'light';
+  style: string;
   dateObj = new Date();
 
   constructor(private route: ActivatedRoute) {}
 
-  ngOnInit(): void {
-    this.route.params.subscribe((params: Params) => {
-      console.log(params);
-    });
+  linkStyle(page: string) {
+    this.style = `${page}-shadow`;
   }
+
+  ngOnInit(): void {}
 }
