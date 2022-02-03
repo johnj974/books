@@ -27,14 +27,13 @@ export class AuthorSearchComponent implements OnInit {
   }
 
   getAuthor(author: string) {
+    const key = 'inauthor';
     if (author === null) {
       return;
     } else {
-      this.booksService.getByAuthor(author).subscribe((data) => {
-        console.log(data);
+      this.booksService.getBySearch(key, author).subscribe((data) => {
         this.authorSearchArray = data;
         this.searchAuthorForm.reset();
-        console.log(this.authorSearchArray);
       });
     }
   }

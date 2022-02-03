@@ -26,14 +26,13 @@ export class GenreSearchComponent implements OnInit {
   }
 
   getCategory(category: string) {
+    const key = 'subject';
     if (category === null) {
       return;
     } else {
-      this.booksService.getByCategory(category).subscribe((data) => {
-        console.log(data);
+      this.booksService.getBySearch(key, category).subscribe((data) => {
         this.categorySearchArray = data;
         this.searchCategoryForm.reset();
-        console.log(category);
       });
     }
   }

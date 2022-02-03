@@ -27,10 +27,11 @@ export class TitleSearchComponent implements OnInit {
   }
 
   getTitle(title: string) {
+    const key = 'intitle';
     if (title === null) {
       return;
     } else {
-      this.booksService.getByTitle(title).subscribe((data) => {
+      this.booksService.getBySearch(key, title).subscribe((data) => {
         for (const item of data) {
           this.titleArray.push(item);
         }
@@ -47,3 +48,5 @@ export class TitleSearchComponent implements OnInit {
     this.router.navigate([bookTitle, bookId], { relativeTo: this.route });
   }
 }
+
+// getBySearch(searchKey,searchValue)

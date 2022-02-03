@@ -15,7 +15,7 @@ a {
 
 #home-link:hover,
 #home-link.active {
-  border-bottom: 2px solid var(--footer-bg-color);
+  border-bottom: 2px solid var(--orange-color);
 }
 
 #title-link:hover,

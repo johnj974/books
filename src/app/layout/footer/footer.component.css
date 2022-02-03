@@ -28,22 +28,26 @@ p.quote-display {
 a.nav-link {
   font-size: 1.2rem;
   color: var(--footer-font-color);
+  border-bottom: 2px solid transparent;
 }
 #home-link:hover {
   color: var(--orange-color);
+  border-bottom: 2px solid var(--orange-color);
 }
 
 #title-link:hover {
   color: var(--title-color);
+  border-bottom: 2px solid var(--title-color);
 }
 
 #category-link:hover {
   color: var(--category-color);
+  border-bottom: 2px solid var(--category-color);
 }
 
 #author-link:hover {
   color: var(--author-color);
-  /* border-bottom: 1px solid #0d6efd; */
+  border-bottom: 2px solid var(--author-color);
 }
 
 .contact-info {

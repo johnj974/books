@@ -60,6 +60,12 @@ img {
 
 .btn-orange {
   background-color: var(--orange-color);
+  transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.btn-orange:hover {
+  transform: scale(1.1);
+  box-shadow: 5px 5px 20px 0px hsla(0, 0%, 100%, 0.5);
 }
 /* FORM VALIDATION */
 input.ng-invalid.ng-touched {
