@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { QuotesService } from 'src/app/shared/services/quotes.service';
 
 import { Quotes } from 'src/app/shared/interfaces/quotes';
+import { NavbarService } from 'src/app/shared/services/navbar.service';
 
 @Component({
   selector: 'app-footer',
@@ -18,17 +19,21 @@ export class FooterComponent implements OnInit {
     text: 'Time stays long enough for anyone who will use it.',
     author: 'Leonardo Da Vinci',
   };
-  constructor(private quoteService: QuotesService) {}
+  constructor(
+    private quoteService: QuotesService,
+    private navbarService: NavbarService
+  ) {}
+
+  onSendNav(link: string) {
+    this.navbarService.navLinkOut.next(link);
+  }
 
   ngOnInit(): void {
     this.quoteService.getQuotes().subscribe((data) => {
       this.quotesArray = data;
-      //console.log(this.quotesArray);
       let number = Math.floor(Math.random() * this.quotesArray.length) + 1;
       this.retrievedQuote.text = this.quotesArray[number].text;
       this.authorCheck(this.quotesArray[number].author);
-
-      //console.log(this.retrievedQuote);
     });
   }
 
