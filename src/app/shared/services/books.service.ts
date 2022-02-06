@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { KeysService } from './keys.service';
 import { map } from 'rxjs/operators';
+import { BooksInterface } from '../interfaces/books';
 
 @Injectable({
   providedIn: 'root',
@@ -13,12 +14,12 @@ export class BooksService {
 
   getBySearch(searchKey: string, searchValue: string) {
     return this.http
-      .get(
+      .get<BooksInterface>(
         `https://www.googleapis.com/books/v1/volumes?q=${searchKey}:${searchValue}&key=${this.keysService.getKey()}&maxResults=10`
       )
       .pipe(
         map((responseData) => {
-          let searchArray;
+          let searchArray: BooksInterface[];
           for (const key in responseData) {
             if (responseData.hasOwnProperty(key)) {
               if (key === 'items') {

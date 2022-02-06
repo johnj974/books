@@ -56,3 +56,31 @@ a.nav-link {
   font-weight: 700;
   font-size: 1.2rem;
 }
+
+.to-top {
+  display: none;
+}
+
+.to-top-btn {
+  color: var(--footer-font-color);
+  background-color: var(--footer-bg-color);
+  border: none;
+  width: 20%;
+  margin: 0 auto;
+}
+
+@media (max-width: 571px) {
+  .contact-info {
+    color: var(--footer-font-color);
+    background-color: var(--footer-bg-color);
+  }
+
+  .to-top {
+    display: block;
+  }
+
+  .to-top-btn {
+    background-color: var(--footer-font-color);
+    color: var(--footer-bg-color);
+  }
+}

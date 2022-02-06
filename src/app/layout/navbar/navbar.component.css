@@ -33,3 +33,8 @@ a {
 #category-link.active {
   border-bottom: 2px solid var(--category-color);
 }
+
+.date-time p {
+  margin-bottom: 0;
+  font-weight: 700;
+}
