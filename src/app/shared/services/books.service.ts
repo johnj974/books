@@ -32,4 +32,10 @@ export class BooksService {
         })
       );
   }
+
+  getByID(bookID) {
+    return this.http.get(
+      `https://www.googleapis.com/books/v1/volumes/${bookID}?key=${this.keysService.getKey()}`
+    );
+  }
 }

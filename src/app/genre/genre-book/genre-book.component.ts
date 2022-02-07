@@ -9,14 +9,24 @@ import { BooksService } from 'src/app/shared/services/books.service';
 })
 export class GenreBookComponent implements OnInit {
   //.
+  bookID: string;
+
   constructor(
     private bookService: BooksService,
     private route: ActivatedRoute
   ) {}
 
+  retrieveBook() {
+    this.bookService.getByID(this.bookID).subscribe((data) => {
+      console.log(data);
+    });
+  }
+
   ngOnInit(): void {
     this.route.params.subscribe((data) => {
-      console.log(data);
+      console.log(data.id);
+      this.bookID = data.id;
+      this.retrieveBook();
     });
   }
 }
