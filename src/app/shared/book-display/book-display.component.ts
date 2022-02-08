@@ -1,19 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { BooksService } from 'src/app/shared/services/books.service';
+import { BooksService } from '../services/books.service';
 
 @Component({
-  selector: 'app-title-book',
-  templateUrl: './title-book.component.html',
-  styleUrls: ['./title-book.component.css'],
+  selector: 'app-book-display',
+  templateUrl: './book-display.component.html',
+  styleUrls: ['./book-display.component.css'],
 })
-export class TitleBookComponent implements OnInit {
+export class BookDisplayComponent implements OnInit {
   //.
-
   bookID: string;
   constructor(
-    private bookService: BooksService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private bookService: BooksService
   ) {}
 
   retrieveBook() {
