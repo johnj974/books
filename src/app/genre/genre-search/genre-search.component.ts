@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { BooksService } from 'src/app/shared/services/books.service';
 
 @Component({
@@ -8,10 +9,11 @@ import { BooksService } from 'src/app/shared/services/books.service';
   templateUrl: './genre-search.component.html',
   styleUrls: ['./genre-search.component.css'],
 })
-export class GenreSearchComponent implements OnInit {
+export class GenreSearchComponent implements OnInit, OnDestroy {
   //.
   categorySearchArray = [];
   searchCategoryForm: FormGroup;
+  bookSubscription: Subscription;
 
   constructor(
     private booksService: BooksService,
@@ -30,10 +32,12 @@ export class GenreSearchComponent implements OnInit {
     if (category === null) {
       return;
     } else {
-      this.booksService.getBySearch(key, category).subscribe((data) => {
-        this.categorySearchArray = data;
-        this.searchCategoryForm.reset();
-      });
+      this.bookSubscription = this.booksService
+        .getBySearch(key, category)
+        .subscribe((data) => {
+          this.categorySearchArray = data;
+          this.searchCategoryForm.reset();
+        });
     }
   }
 
@@ -41,5 +45,9 @@ export class GenreSearchComponent implements OnInit {
     const genreId = id;
     const bookgenre = genre.replace(/ /g, '');
     this.router.navigate([bookgenre, genreId], { relativeTo: this.route });
+  }
+
+  ngOnDestroy(): void {
+    this.bookSubscription.unsubscribe();
   }
 }

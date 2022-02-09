@@ -85,3 +85,7 @@ input.ng-invalid.ng-touched {
   object-fit: contain;
   padding: 0.2em 0;
 }
+
+tr:hover {
+  cursor: pointer;
+}

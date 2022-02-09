@@ -33,36 +33,28 @@
       </div>
     </div>
     <div class="row g-4">
-      <div
-        class="col-xl-3 col-lg-4 col-md-6 col-sm-12 card-group"
-        *ngFor="let title of titleArray"
-      >
-        <div class="card titleSearch-card" style="width: 18rem">
-          <img
-            src="{{ title.volumeInfo.imageLinks.thumbnail }}"
-            class="card-img-top"
-            alt="..."
-          />
-          <div class="card-body">
-            <h5 class="card-title">{{ title.volumeInfo.title }}</h5>
-            <p class="card-text">
-              {{ title.volumeInfo.categories[0] }}
-              -{{ title.volumeInfo.averageRating }}
-            </p>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">{{ title.volumeInfo.authors[0] }}</li>
-          </ul>
-          <div class="card-body">
-            <button
-              class="btn-primary"
-              (click)="toBookInfo(title.volumeInfo.title, title.id)"
-            >
-              press me
-            </button>
-          </div>
-        </div>
-      </div>
+      <table class="table table-hover" *ngIf="titleArray.length > 0">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">Printed</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let title of titleArray; let id = index">
+          <tr (click)="toBookInfo(title.volumeInfo.title, title.id)">
+            <th scope="row">{{ id + 1 }}</th>
+            <td>
+              {{ title.volumeInfo.title }}
+            </td>
+            <td>{{ title.volumeInfo.authors }}</td>
+            <td>
+              {{ title.volumeInfo.publishedDate | slice: 0:4 }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>

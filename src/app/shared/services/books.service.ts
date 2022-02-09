@@ -15,7 +15,7 @@ export class BooksService {
   getBySearch(searchKey: string, searchValue: string) {
     return this.http
       .get<BooksInterface>(
-        `https://www.googleapis.com/books/v1/volumes?q=${searchKey}:${searchValue}&key=${this.keysService.getKey()}&maxResults=10`
+        `https://www.googleapis.com/books/v1/volumes?q=${searchKey}:${searchValue}&key=${this.keysService.getKey()}&maxResults=40`
       )
       .pipe(
         map((responseData) => {

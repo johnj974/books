@@ -33,36 +33,28 @@
       </div>
     </div>
     <div class="row g-4">
-      <div
-        class="col-xl-3 col-lg-4 col-md-6 col-sm-12 card-group"
-        *ngFor="let author of authorSearchArray"
-      >
-        <div class="card" style="width: 18rem">
-          <img
-            src="{{ author.volumeInfo.imageLinks.thumbnail }}"
-            class="card-img-top"
-            alt="..."
-          />
-          <div class="card-body">
-            <h5 class="card-title">{{ author.volumeInfo.title }}</h5>
-            <p class="card-text">
-              {{ author.volumeInfo.categories[0] }}
-              -{{ author.volumeInfo.averageRating }}
-            </p>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">{{ author.volumeInfo.authors[0] }}</li>
-          </ul>
-          <div class="card-body">
-            <button
-              class="btn-primary"
-              (click)="toAuthorsInfo(author.volumeInfo.title, author.id)"
-            >
-              press me
-            </button>
-          </div>
-        </div>
-      </div>
+      <table class="table table-hover" *ngIf="authorSearchArray.length > 0">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">Printed</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let author of authorSearchArray; let id = index">
+          <tr (click)="toAuthorsInfo(author.volumeInfo.title, author.id)">
+            <th scope="row">{{ id + 1 }}</th>
+            <td>
+              {{ author.volumeInfo.title | splitLast: "," }}
+            </td>
+            <td>{{ author.volumeInfo.authors }}</td>
+            <td>
+              {{ author.volumeInfo.publishedDate | slice: 0:4 }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>

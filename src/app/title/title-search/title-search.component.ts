@@ -35,7 +35,6 @@ export class TitleSearchComponent implements OnInit {
         for (const item of data) {
           this.titleArray.push(item);
         }
-        console.log(this.titleArray);
         console.log(this.searchTitleForm.value.title);
         this.searchTitleForm.reset();
       });

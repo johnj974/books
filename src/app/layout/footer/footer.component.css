@@ -65,8 +65,9 @@ a.nav-link {
   color: var(--footer-font-color);
   background-color: var(--footer-bg-color);
   border: none;
-  width: 20%;
+  width: 50%;
   margin: 0 auto;
+  display: none;
 }
 
 @media (max-width: 571px) {
@@ -82,5 +83,6 @@ a.nav-link {
   .to-top-btn {
     background-color: var(--footer-font-color);
     color: var(--footer-bg-color);
+    display: block;
   }
 }
