@@ -2,3 +2,14 @@ section {
   background-color: hsl(0, 0%, 8%);
   color: hsl(0, 0%, 100%);
 }
+
+img {
+  width: 80%;
+  object-fit: cover;
+}
+
+@media (max-width: 571px) {
+  img {
+    width: 100%;
+  }
+}

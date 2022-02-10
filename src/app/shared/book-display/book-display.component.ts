@@ -10,6 +10,9 @@ import { BooksService } from '../services/books.service';
 export class BookDisplayComponent implements OnInit {
   //.
   bookID: string;
+  book: {};
+  noImage = '../../../assets/images/no-image-available.png';
+
   constructor(
     private route: ActivatedRoute,
     private bookService: BooksService
@@ -17,7 +20,8 @@ export class BookDisplayComponent implements OnInit {
 
   retrieveBook() {
     this.bookService.getByID(this.bookID).subscribe((data) => {
-      console.log(data);
+      this.book = data;
+      console.log(this.book);
     });
   }
 

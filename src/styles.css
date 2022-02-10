@@ -60,12 +60,14 @@ img {
 
 .btn-orange {
   background-color: var(--orange-color);
-  transition: transform 0.5s, box-shadow 0.5s;
+  transition: background-color 0.5s, color 0.5s;
 }
 
 .btn-orange:hover {
-  transform: scale(1.1);
-  box-shadow: 5px 5px 20px 0px hsla(0, 0%, 100%, 0.5);
+  /* transform: scale(1.1); */
+  /* box-shadow: 5px 5px 20px 0px hsla(0, 0%, 100%, 0.5); */
+  color: var(--orange-color);
+  background-color: var(--footer-bg-color);
 }
 /* FORM VALIDATION */
 input.ng-invalid.ng-touched {
@@ -88,4 +90,11 @@ input.ng-invalid.ng-touched {
 
 tr:hover {
   cursor: pointer;
+}
+
+@media (max-width: 571px) {
+  button {
+    width: 100%;
+    margin: 1rem auto;
+  }
 }

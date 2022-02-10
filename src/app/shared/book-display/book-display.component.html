@@ -1,2 +1,26 @@
-<p>book-display works!</p>
-<p>{{ bookID }}</p>
+<section id="header" *ngIf="book">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 text-left py-5 d-none d-lg-block">
+        <h1 class="display-1 pt-5 mt-5">{{ book.volumeInfo.title }}</h1>
+        <p class="lead">{{ book.volumeInfo.authors }}</p>
+      </div>
+      <div class="col-lg-6 p-5">
+        <img
+          src="{{ book.volumeInfo.imageLinks.large || noImage }}"
+          alt="the-field-poster"
+          class="img-fluid poster"
+        />
+        <p>Published Date:{{ book.volumeInfo.publishedDate | slice: 0:4 }}</p>
+        <p>Publisher: {{ book.volumeInfo.publisher }}</p>
+        <p>Pages: {{ book.volumeInfo.pageCount }}</p>
+        <p>Language: {{ book.volumeInfo.language }}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <p innerHtml="{{ book.volumeInfo.description }}"></p>
+      </div>
+    </div>
+  </div>
+</section>

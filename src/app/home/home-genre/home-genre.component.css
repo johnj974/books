@@ -1,4 +1,10 @@
 img {
-  width: 70%;
+  width: 80%;
   object-fit: cover;
+}
+
+@media (max-width: 571px) {
+  img {
+    width: 100%;
+  }
 }
