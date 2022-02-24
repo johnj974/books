@@ -28,7 +28,7 @@
                   >Please enter a valid Category</span
                 >
               </div>
-              <button class="btn btn-orange">Search</button>
+              <button class="btn btn-orange selection">Search</button>
             </form>
           </div>
         </div>
@@ -72,9 +72,9 @@
       <table class="table table-hover" *ngIf="categorySearchArray.length > 0">
         <thead>
           <tr>
-            <th scope="col">#</th>
+            <th scope="col"></th>
             <th scope="col">Title</th>
-            <th scope="col">Author</th>
+            <th scope="col" class="d-none d-lg-table-cell">Author</th>
             <th scope="col">Printed</th>
           </tr>
         </thead>
@@ -84,7 +84,9 @@
             <td>
               {{ category.volumeInfo.title | splitLast: "," }}
             </td>
-            <td>{{ category.volumeInfo.authors }}</td>
+            <td class="d-none d-lg-table-cell">
+              {{ category.volumeInfo.authors }}
+            </td>
             <td>
               {{ category.volumeInfo.publishedDate | slice: 0:4 }}
             </td>

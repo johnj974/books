@@ -3,6 +3,7 @@
 
 * {
   font-family: "Ubuntu", sans-serif;
+  /* border: 1px solid red; */
 }
 
 body {
@@ -93,8 +94,8 @@ tr:hover {
 }
 
 @media (max-width: 571px) {
-  button {
+  .selection {
     width: 100%;
-    margin: 1rem auto;
+    /* margin: 1rem auto; */
   }
 }

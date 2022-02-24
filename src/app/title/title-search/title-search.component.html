@@ -27,7 +27,7 @@
                 >Please enter a valid search title</span
               >
             </div>
-            <button class="btn btn-orange">Search</button>
+            <button class="btn btn-orange selection">Search</button>
           </form>
         </div>
       </div>
@@ -36,10 +36,10 @@
       <table class="table table-hover" *ngIf="titleArray.length > 0">
         <thead>
           <tr>
-            <th scope="col">#</th>
+            <th scope="col"></th>
             <th scope="col">Title</th>
-            <th scope="col">Author</th>
-            <th scope="col">Printed</th>
+            <th scope="col" class="d-none d-lg-table-cell">Author</th>
+            <th scope="col" class="d-none d-lg-table-cell">Printed</th>
           </tr>
         </thead>
         <tbody *ngFor="let title of titleArray; let id = index">
@@ -48,8 +48,10 @@
             <td>
               {{ title.volumeInfo.title }}
             </td>
-            <td>{{ title.volumeInfo.authors }}</td>
-            <td>
+            <td class="d-none d-lg-table-cell">
+              {{ title.volumeInfo.authors }}
+            </td>
+            <td class="d-none d-lg-table-cell">
               {{ title.volumeInfo.publishedDate | slice: 0:4 }}
             </td>
           </tr>
