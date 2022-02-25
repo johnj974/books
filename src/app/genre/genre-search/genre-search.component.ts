@@ -14,6 +14,8 @@ export class GenreSearchComponent implements OnInit {
   categorySearchArray = [];
   searchCategoryForm: FormGroup;
   noImage = '../../../assets/images/no-image-available.png';
+  noData = 'No Data';
+  categoryOptions = ["History", "Fiction"]
 
   constructor(
     private booksService: BooksService,

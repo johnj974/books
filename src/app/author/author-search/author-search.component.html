@@ -46,13 +46,13 @@
           <tr (click)="toAuthorsInfo(author.volumeInfo.title, author.id)">
             <th scope="row">{{ id + 1 }}</th>
             <td>
-              {{ author.volumeInfo.title | splitLast: "," }}
+              {{ (author.volumeInfo.title | splitLast: ",") || noData }}
             </td>
             <td class="d-none d-lg-table-cell">
-              {{ author.volumeInfo.authors }}
+              {{ author.volumeInfo.authors || noData }}
             </td>
             <td>
-              {{ author.volumeInfo.publishedDate | slice: 0:4 }}
+              {{ (author.volumeInfo.publishedDate | slice: 0:4) || noData }}
             </td>
           </tr>
         </tbody>

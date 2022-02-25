@@ -13,13 +13,27 @@
               autocomplete="off"
             >
               <div class="mb-3">
-                <input
+                <!-- <input
                   type="text"
                   class="form-control"
                   id="category-search"
                   aria-describedby="emailHelp"
                   formControlName="category"
-                />
+                /> -->
+                <select
+                  formControlName="category"
+                  id="category-search"
+                  class="form-control"
+                  type="text"
+                  placeholder="Category"
+                >
+                  <option
+                    [value]="category"
+                    *ngFor="let category of categoryOptions"
+                  >
+                    {{ category }}
+                  </option>
+                </select>
                 <span
                   *ngIf="
                     searchCategoryForm.get('category').touched &&
@@ -85,10 +99,10 @@
               {{ category.volumeInfo.title | splitLast: "," }}
             </td>
             <td class="d-none d-lg-table-cell">
-              {{ category.volumeInfo.authors }}
+              {{ category.volumeInfo.authors || noData }}
             </td>
             <td>
-              {{ category.volumeInfo.publishedDate | slice: 0:4 }}
+              {{ (category.volumeInfo.publishedDate | slice: 0:4) || noData }}
             </td>
           </tr>
         </tbody>

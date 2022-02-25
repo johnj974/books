@@ -19,6 +19,7 @@
                 aria-describedby="emailHelp"
                 formControlName="title"
               />
+
               <span
                 *ngIf="
                   !searchTitleForm.get('title').valid &&
@@ -27,6 +28,7 @@
                 >Please enter a valid search title</span
               >
             </div>
+
             <button class="btn btn-orange selection">Search</button>
           </form>
         </div>
@@ -49,10 +51,10 @@
               {{ title.volumeInfo.title }}
             </td>
             <td class="d-none d-lg-table-cell">
-              {{ title.volumeInfo.authors }}
+              {{ title.volumeInfo.authors || noData }}
             </td>
             <td class="d-none d-lg-table-cell">
-              {{ title.volumeInfo.publishedDate | slice: 0:4 }}
+              {{ (title.volumeInfo.publishedDate | slice: 0:4) || noData }}
             </td>
           </tr>
         </tbody>

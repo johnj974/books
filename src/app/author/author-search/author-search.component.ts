@@ -13,6 +13,7 @@ export class AuthorSearchComponent implements OnInit {
   //.
   authorSearchArray = [];
   searchAuthorForm: FormGroup;
+  noData = 'No Data';
 
   constructor(
     private booksService: BooksService,

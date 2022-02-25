@@ -13,6 +13,7 @@ export class TitleSearchComponent implements OnInit {
 
   searchTitleForm: FormGroup;
   titleArray = [];
+  noData = 'No Data';
 
   constructor(
     private booksService: BooksService,

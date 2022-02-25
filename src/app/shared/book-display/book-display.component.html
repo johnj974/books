@@ -7,7 +7,11 @@
       </div>
       <div class="col-lg-6 p-5">
         <img
-          src="{{ book.volumeInfo.imageLinks.large || noImage }}"
+          src="{{
+            book.volumeInfo.imageLinks.large ||
+              book.volumeInfo.imageLinks.thumbnail ||
+              noImage
+          }}"
           alt="the-field-poster"
           class="img-fluid poster"
         />
